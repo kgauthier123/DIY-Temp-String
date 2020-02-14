@@ -1,35 +1,4 @@
-/**************************************************************************
-simple_logging_example.ino
-Initial Creation Date: 6/3/2016
-Written By:  Jeff Horsburgh (jeff.horsburgh@usu.edu)
-Updated By:  Kenny Fryar-Ludwig (kenny.fryarludwig@usu.edu)
-Additional Work By:  Sara Damiano (sdamiano@stroudcenter.org)
-Development Environment: PlatformIO 3.2.1
-Hardware Platform: EnviroDIY Mayfly Arduino Datalogger
-Radio Module: Sodaq GPRSbee or Digi XBee S6B (WiFi)
-Software License: BSD-3.
-  Copyright (c) 2017, Stroud Water Research Center (SWRC)
-  and the EnviroDIY Development Team
-This sketch is an example of posting data to the Web Streaming Data Loader
-Assumptions:
-1. The Bee WiFi module has must be configured correctly to connect to the
-   wireless network prior to running this sketch. (If Applicable)
-2. The Mayfly has been registered at http://data.envirodiy.org and the sensor
-   has been configured. In this example, only temperature and battery voltage are used.
-DISCLAIMER:
-THIS CODE IS PROVIDED "AS IS" - NO WARRANTY IS GIVEN.
-**************************************************************************/
 
-// -----------------------------------------------
-// Note: All 'Serial.print' statements can be
-// removed if they are not desired - used for
-// debugging only
-// -----------------------------------------------
-
-
-// -----------------------------------------------
-// 1. Include all sensors and necessary files here
-// -----------------------------------------------
 #include <Arduino.h>
 #include <Wire.h>
 #include <avr/sleep.h>
@@ -47,7 +16,7 @@ const char *FILE_NAME="tempsting";
 OneWire oneWire(ONE_WIRE_BUS);
 
 // -----------------------------------------------
-// 4. Timing Options For Logging
+// 1. Timing Options For Logging
 // -----------------------------------------------
 int LOGGING_INTERVAL = 1;  // How frequently (in minutes) to log data
 int READ_DELAY = 1;  // How often (in minutes) the timer wakes up
@@ -55,7 +24,7 @@ int UPDATE_RATE = 200; // How frequently (in milliseconds) the logger checks if 
 int COMMAND_TIMEOUT = 15000;  // How long (in milliseconds) to wait for a server response
 const int TIME_ZONE = -0;
 // -----------------------------------------------
-// 6. Board setup info
+// 2. Board setup info
 // -----------------------------------------------
 int SERIAL_BAUD = 9600;  // Serial port BAUD rate
 int GREEN_LED = 8;  // Pin for the green LED
@@ -69,7 +38,7 @@ int BATTERY_PIN = A6;    // select the input pin for the potentiometer
 int SD_SS_PIN = 12;  // SD Card Pin
 
 // -----------------------------------------------
-// 7. Setup variables
+// 3. Setup variables
 // -----------------------------------------------
 float ONBOARD_TEMPERATURE = 0;  // Variable to store the temperature result in
 float ONBOARD_BATTERY = 0;  // variable to store the value coming from the sensor
@@ -120,7 +89,7 @@ float Sensor0600 = 0.00;
 float Sensor0700 = 0.00;
 
 // -----------------------------------------------
-// 8. Working functions
+// 4. Working functions
 // -----------------------------------------------
 
 // Helper function to get the current date/time from the RTC
