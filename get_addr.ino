@@ -2,7 +2,7 @@
 
 // Based on the OneWire library example
 
-OneWire ds(2);  //data wire connected to GPIO15
+OneWire ds(6);  //data wire 
 
 void setup(void) {
   Serial.begin(9600);
